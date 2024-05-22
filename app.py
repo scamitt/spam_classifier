@@ -4,14 +4,14 @@ from nltk import word_tokenize
 from nltk.corpus import stopwords
 import string
 from nltk.stem.porter import PorterStemmer
-import nltk
 
-
-file1=open('/Users/amitanand/PycharmProjects/sms-spam-classifier/vectorizer.pkl', 'rb')
+file1 = open('vectorizer.pkl', 'rb')
 tfidf = pickle.load(file1)
-file2=open('/Users/amitanand/PycharmProjects/sms-spam-classifier/model.pkl', 'rb')
+file2 = open('model.pkl', 'rb')
 model = pickle.load(file2)
 ps = PorterStemmer()
+
+
 def transform_text(text):
     text = text.lower()
     text = word_tokenize(text)
@@ -37,6 +37,7 @@ def transform_text(text):
     ret = ' '.join(y)
     return ret
 
+
 st.title('SMS Spam Classifier')
 sms = st.text_input('Enter your message')
 if st.button('Predict'):
@@ -50,7 +51,3 @@ if st.button('Predict'):
             st.header('Not Spam')
         else:
             st.header('Spam')
-
-
-
-
