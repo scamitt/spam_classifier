@@ -4,6 +4,7 @@ from nltk import word_tokenize
 from nltk.corpus import stopwords
 import string
 from nltk.stem.porter import PorterStemmer
+import nltk
 
 nltk.download('punkt')
 
