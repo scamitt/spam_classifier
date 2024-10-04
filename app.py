@@ -5,15 +5,7 @@ from nltk.corpus import stopwords
 import string
 from nltk.stem.porter import PorterStemmer
 
-# Function to download necessary NLTK resources
-def download_nltk_data():
-    try:
-        nltk.data.find('tokenizers/punkt')
-    except LookupError:
-        nltk.download('punkt')
-
-# Call the download function at the beginning of your application
-download_nltk_data()
+nltk.download('punkt')
 
 file1 = open('vectorizer.pkl', 'rb')
 tfidf = pickle.load(file1)
