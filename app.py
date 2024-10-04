@@ -15,6 +15,7 @@ def download_nltk_data():
 
 # Call the download function
 download_nltk_data()
+nltk.download('punkt_tab')
 
 file1 = open('vectorizer.pkl', 'rb')
 tfidf = pickle.load(file1)
