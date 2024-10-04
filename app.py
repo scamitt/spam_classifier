@@ -6,7 +6,15 @@ import string
 from nltk.stem.porter import PorterStemmer
 import nltk
 
-nltk.download('punkt')
+# Function to download necessary NLTK resources
+def download_nltk_data():
+    try:
+        nltk.data.find('tokenizers/punkt')
+    except LookupError:
+        nltk.download('punkt')
+
+# Call the download function
+download_nltk_data()
 
 file1 = open('vectorizer.pkl', 'rb')
 tfidf = pickle.load(file1)
